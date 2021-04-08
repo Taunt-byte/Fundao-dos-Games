@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Příkazový řádek sady Visual Studio</h1>
+    <h2>Použití: vs_setup.exe [příkaz [parametry]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Příkaz pro příkazový řádek</strong></th>
+                    <th><strong>Popis</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>Upraví nainstalovaný produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>Aktualizuje nainstalovaný produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>Opraví nainstalovaný produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>Odinstaluje nainstalovaný produkt.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Parametr příkazového řádku</strong></th>
+                    <th><strong>Popis</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;adresář></code></td>
+                    <td>Instalační adresář instance, se kterou se bude pracovat. U instalačního příkazu se jedná o místo, kam se instance nainstaluje. U jiných příkazů jde o místo, kam se instance nainstalovala.</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;ID></code></td>
+                    <td>ID produktu instalované instance. Vyžaduje se u instalačního příkazu. U jiných příkazů se ignoruje, pokud je zadaný parametr --installPath.</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;adresář></code></td>
+                    <td>Určuje adresář, ve kterém se vytvoří mezipaměť pro offline instalaci.</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>Tento parametr použijte s přepínačem --layout. Ověří, jestli v adresáři offline mezipaměti chybí nějaké datové části a jestli jsou nebo nejsou platné.</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>Tento parametr použijte s přepínačem --layout. Provede stejnou kontrolu platnosti jako přepínač „--verify“ a zároveň opraví všechny zjištěné problémy.</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;cesta k souboru s manifestem katalogu></code> <em>[&lt;cesta k souboru s manifestem katalogu> ...]</em></td>
+                    <td>Tento parametr použijte s přepínačem --layout. Vyčistí adresář offline mezipaměti a odstraní všechny zastaralé balíčky nalezené v zadaných manifestech katalogu.</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;jazyk-národní prostředí></code> <em>[&lt;jazyk-národní prostředí> ...]</em></td>
+                    <td>Používá se s přepínačem --layout. Určuje jazyky, ve kterých se vytvoří mezipaměť pro offline instalaci. Úplný seznam podporovaných jazyků a národních prostředí najdete níže.</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;ID úlohy nebo komponenty></code><em>[&lt;ID úlohy nebo komponenty> ...]</em></td>
+                    <td>Definuje artefakt (skupinu, úlohu nebo komponentu), který se má přidat do instalace. Může se na příkazovém řádku vyskytovat vícekrát.<br />Nainstalují se požadované komponenty artefaktu, ale ne doporučené nebo volitelné. Další komponenty můžete řídit globálně pomocí parametrů --includeRecommended a --includeOptional. Pokud chcete instalaci řídit podrobněji, můžete za ID artefaktu přidat ;includeRecommended nebo ;includeOptional (např. "--add uloha1;includeRecommended" nebo "--add uloha2;includeOptional;includeRecommended").<br />Parametr je volitelný u instalačního příkazu a příkazu modify. U příkazů update, repair a uninstall se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;ID úlohy nebo komponenty></code> <em>[&lt;ID úlohy nebo komponenty> ...]</em></td>
+                    <td>Definuje artefakt (skupinu, úlohu nebo komponentu), který se má odebrat z instalace. Může se na příkazovém řádku vyskytovat vícekrát. Parametr je volitelný u instalačního příkazu a příkazu modify. U příkazů update, repair a uninstall se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>Určuje, jestli se mají nainstalovat všechny úlohy a komponenty produktu.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>Zahrnuje doporučené komponenty pro všechny instalované úlohy, ale neobsahuje volitelné komponenty. Úlohy se určují parametrem --allWorkloads nebo --add.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>Zahrnuje volitelné komponenty pro všechny instalované úlohy, ale neobsahuje doporučené komponenty. Úlohy se určují parametrem --allWorkloads nebo --add.</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>Určuje, že během instalace se nemá zobrazovat žádné uživatelské rozhraní.</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>Určuje, že se má zobrazit uživatelské rozhraní, ale nemá se vyžadovat žádný zásah uživatele.</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>Určuje, že příkazy s parametrem --passive nebo --quiet nebudou automaticky restartovat počítač (pokud to bude potřeba). Parametr se ignoruje, pokud není zadaný parametr --passive ani parametr --quiet.</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;jazyk-národní prostředí></code></td>
+                    <td>Umožňuje změnit jazyk zobrazení uživatelského rozhraní instalačního programu. Nastavení bude trvalé.</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;název></code></td>
+                    <td>Definuje přezdívku, která se přiřadí instalovanému produktu. Může mít maximálně 10 znaků.</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>Zobrazí použití parametru.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Pokročilý parametr příkazového řádku</strong></th>
+                    <th><strong>Popis</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;ID></code></td>
+                    <td>ID kanálu instalované instance. Vyžaduje se u instalačního příkazu. U jiných příkazů se ignoruje, pokud je zadaný parametr --installPath.</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;URI></code></td>
+                    <td>Identifikátor URI manifestu kanálu. Tento parametr je možné použít u instalačního příkazu. U jiných příkazů se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;URI></code></td>
+                    <td>Identifikátor URI manifestu kanálu, který se má použít pro instalaci. Identifikátor URI určený parametrem --channelUri (který se musí zadat, když je zadaný --installChannelUri), bude sloužit ke zjišťování aktualizací. Pokud o aktualizace nemáte zájem, musí se --channelUri zadat bez argumentu. Tento parametr je možné použít u instalačního příkazu. U jiných příkazů se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;URI></code></td>
+                    <td>Identifikátor URI manifestu katalogu, který se má použít pro instalaci. Pokud je tento parametr zadaný, pokusí se správce kanálu o stažení manifestu katalogu z tohoto identifikátoru URI předtím, než se tento identifikátor použije v manifestu instalačního kanálu. Tento parametr slouží k podpoře offline instalace, při které se vytvoří mezipaměť s již staženým produktovým katalogem. Tento parametr je možné použít u instalačního příkazu. U jiných příkazů se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;cesta></code></td>
+                    <td>Identifikátor URI nebo cesta k souboru odpovědí</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;jazyk-národní prostředí></code></td>
+                    <td>Definuje jazyk artefaktu (skupiny, úlohy nebo komponenty), který se má nainstalovat. Může se na příkazovém řádku vyskytovat vícekrát. Parametr je volitelný u instalačního příkazu a příkazu modify. U příkazů update, repair a uninstall se ignoruje. Pokud se nezadá, použije se pro instalaci národní prostředí počítače.</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;jazyk-národní prostředí></code></td>
+                    <td>Definuje jazyk artefaktu (skupiny, úlohy nebo komponenty), který se má odebrat. Může se na příkazovém řádku vyskytovat vícekrát. Parametr je volitelný u instalačního příkazu a příkazu modify. U příkazů update, repair a uninstall se ignoruje.</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>Proces před vrácením ukončovacího kódu počká na dokončení instalace. To je užitečné při automatizaci instalací, kdy je třeba počkat na dokončení instalace a následně zpracovat návratový kód z této instalace.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Jazyk-národní prostředí</th>
+                    <th>Jazyk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>čeština</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>němčina</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>angličtina</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>španělština</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>francouzština</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>italština</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>japonština</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>korejština</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>polština</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>portugalština (Brazílie)</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>ruština</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>turečtina</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>čínština (zjednodušená)</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>čínština (tradiční)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />Podrobné pokyny najdete v článku <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x405">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x405</a> </span>.</p>
+    <p>&#160;</p>
+</body>
+</html>

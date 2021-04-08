@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio 명령줄</h1>
+    <h2>사용법: vs_setup.exe [명령 [옵션]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>명령줄 명령</strong></th>
+                    <th><strong>설명</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>설치된 제품을 수정합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>설치된 제품을 업데이트합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>설치된 제품을 복구합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>설치된 제품을 제거합니다.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>명령줄 옵션</strong></th>
+                    <th><strong>설명</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;dir></code></td>
+                    <td>작업할 인스턴스의 설치 디렉터리. install 명령의 경우 인스턴스가 설치될 곳입니다. 다른 명령에서는 이전에 설치한 인스턴스가 설치된 위치입니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;id></code></td>
+                    <td>설치할 인스턴스에 대한 제품의 ID. install 명령에 필요하며, 다른 명령에서는 --installPath를 지정한 경우 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;dir></code></td>
+                    <td>오프라인 설치 캐시를 만들 디렉터리를 지정합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>--layout 스위치와 함께 이 옵션을 사용합니다. 오프라인 캐시 디렉터리에서 페이로드가 누락되었는지, 유효한지 여부를 확인합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>--layout 스위치와 함께 이 옵션을 사용합니다. 확인된 문제를 수정할 뿐만 아니라, "--verify" 스위치와 같은 유효성 검사를 수행합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;카탈로그 매니페스트의 파일 경로></code> <em>[&lt;카탈로그 매니페스트의 파일 경로> ...]</em></td>
+                    <td>--layout 스위치와 함께 이 옵션을 사용합니다. 오프라인 캐시 디렉터리를 정리하고 지정된 카탈로그 매니페스트에서 발견한 사용되지 않는 패키지를 삭제합니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;언어 로캘></code> <em>[&lt;언어 로캘> ...]</em></td>
+                    <td>--layout 스위치와 함께 사용됩니다. 오프라인 설치 캐시를 만들 언어를 지정합니다. 아래에서 지원되는 언어 로캘의 전체 목록을 참조하세요.</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;작업 또는 구성 요소 ID></code><em>[&lt;작업 또는 구성 요소 ID> ...]</em></td>
+                    <td>설치에 추가할 아티팩트(그룹, 작업 또는 구성 요소)를 정의합니다. 명령줄에 여러 번 나타날 수 있습니다.<br />아티팩트의 필수 구성 요소는 설치되지만, 권장 구성 요소 또는 선택적인 구성 요소는 설치되지 않습니다. --includeRecommended 및/또는 --includeOptional을 사용하여 추가 구성 요소를 전역적으로 제어할 수 있습니다. 좀 더 세부적으로 제어하려면 ";includeRecommended" 및/또는 ";includeOptional"을 artifactId에 추가할 수 있습니다(예: "--add Workload1;includeRecommended" 또는 "--add Workload2;includeOptional;includeRecommended").<br />install 및 modify 명령에서는 선택 사항이고, update, repair 및 uninstall 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;작업 또는 구성 요소 ID></code> <em>[&lt;작업 또는 구성 요소 ID> ...]</em></td>
+                    <td>설치에서 제거할 아티팩트(그룹, 작업 또는 구성 요소)를 정의합니다. 명령줄에 여러 번 나타날 수 있습니다. install 및 modify 명령에서는 선택 사항이고, update, repair 및 uninstall 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>제품에 대한 모든 작업 및 구성 요소를 설치할지 여부.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>설치되는 작업에 대한 권장 구성 요소를 포함하지만, 선택적인 구성 요소는 포함하지 않습니다. 작업은 --allWorkloads 또는 --add로 지정됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>설치되는 작업에 대한 선택적인 구성 요소를 포함하지만, 권장 구성 요소는 포함하지 않습니다. 작업은 --allWorkloads 또는 --add로 지정됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>설치를 수행하는 동안 사용자 인터페이스를 표시하지 않습니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>사용자 인터페이스를 표시하지만, 사용자로부터의 상호 작용을 요청하지 않습니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>존재하는 경우 --passive 또는 --quiet가 포함된 명령 사용 시 시스템이 자동으로 다시 시작되지 않습니다(필요한 경우). --passive도 --quiet도 지정하지 않는 경우 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;언어 로캘></code></td>
+                    <td>설치 관리자 사용자 인터페이스의 표시 언어를 변경합니다. 설정은 지속됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;name></code></td>
+                    <td>설치된 제품에 할당할 애칭을 정의합니다. 애칭은 10자를 초과할 수 없습니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>매개 변수 사용법을 표시합니다.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>고급 명령줄 옵션</strong></th>
+                    <th><strong>설명</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;id></code></td>
+                    <td>설치할 인스턴스에 대한 채널의 ID. install 명령에 필요하며, 다른 명령에서는 --installPath를 지정한 경우 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;uri></code></td>
+                    <td>채널 매니페스트의 URI. install 명령에 사용할 수 있으며 다른 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;uri></code></td>
+                    <td>설치에 사용할 채널 매니페스트의 URI. --channelUri(--installChannelUri를 지정할 때 지정해야 함)에 의해 지정된 URI는 업데이트 검색에 사용됩니다. 업데이트가 불필요한 경우 --channelUri를 인수 없이 지정해야 합니다. install 명령에 사용할 수 있으며 다른 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;uri></code></td>
+                    <td>설치에 사용할 카탈로그 매니페스트의 URI. 지정한 경우 채널 관리자가 설치 채널 매니페스트의 URI를 사용하기 전에 이 URI에서 카탈로그 매니페스트를 다운로드하려고 시도합니다. 이 매개 변수는 이미 다운로드된 제품 카탈로그를 사용하여 레이아웃 캐시를 만드는 오프라인 설치를 지원하기 위해 사용됩니다. install 명령에 사용할 수 있으며 다른 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;path></code></td>
+                    <td>지시 파일에 대한 URI 또는 경로.</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;언어 로캘></code></td>
+                    <td>설치할 아티팩트(그룹, 작업 또는 구성 요소)의 언어를 정의합니다. 명령줄에 여러 번 나타날 수 있습니다. install 및 modify 명령에서는 선택 사항이고, update, repair 및 uninstall 명령에서는 무시됩니다. 존재하지 않는 경우 시스템 로캘이 사용됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;언어 로캘></code></td>
+                    <td>제거할 아티팩트(그룹, 작업 또는 구성 요소)의 언어를 정의합니다. 명령줄에 여러 번 나타날 수 있습니다. install 및 modify 명령에서는 선택 사항이고, update, repair 및 uninstall 명령에서는 무시됩니다.</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>프로세스는 종료 코드를 반환하기 전에 설치가 완료될 때까지 기다립니다. 이 옵션은 해당 설치에서 반환 코드를 처리하기 위해 설치가 완료되기를 기다려야 하는 설치를 자동화할 때 유용합니다.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>언어 로캘</th>
+                    <th>언어</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>체코어</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>독일어</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>영어</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>스페인어</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>프랑스어</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>이탈리아어</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>일본어</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>한국어</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>폴란드어</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>포르투갈어 - 브라질</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>러시아어</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>터키어</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>중국어 간체</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>중국어 번체</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />자세한 지침을 보려면 <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x412">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x412</a> </span>를 방문하세요.</p>
+    <p>&#160;</p>
+</body>
+</html>

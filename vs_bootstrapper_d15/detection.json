@@ -1,0 +1,282 @@
+{
+  "StopIfFounds": [
+    {
+      "Entries": [
+        {
+          "Id": "Dev14.Enterprise.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\enterprise",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev14.Professional.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\professional",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev14.Community.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\community",
+          "Value": "Version"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "Dev12.Ultimate.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\ultimate",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev12.Premium.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\premium",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev12.Professional.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\professional",
+          "Value": "Version"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "Dev11.Ultimate.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\ultimate",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev11.Premium.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\premium",
+          "Value": "Version"
+        },
+        {
+          "Id": "Dev11.Professional.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\professional",
+          "Value": "Version"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "Dev14.Enterprise.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\enterprise",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev14.Professional.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\professional",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev14.Community.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\14.0\\community",
+          "Value": "UpdateVersion"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "Dev12.Ultimate.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\ultimate",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev12.Premium.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\premium",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev12.Professional.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\12.0\\professional",
+          "Value": "UpdateVersion"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "Dev11.Ultimate.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\ultimate",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev11.Premium.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\premium",
+          "Value": "UpdateVersion"
+        },
+        {
+          "Id": "Dev11.Professional.UpdateVersion",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\DevDiv\\vs\\Servicing\\11.0\\professional",
+          "Value": "UpdateVersion"
+        }
+      ]
+    },
+    {
+      "Entries": [
+        {
+          "Id": "NetFX.NetFX4Above.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full",
+          "Value": "Release"
+        },
+        {
+          "Id": "NetFX.NetFX4Above.Version",
+          "Hive": "hklm",
+          "Key": "software\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full",
+          "Value": "Version"
+        }
+      ]
+    }
+  ],
+  "CheckAll": {
+    "Entries": [
+      {
+        "Id": "Dev14.WinExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\winexpress\\Servicing\\14.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev14.WinExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\winexpress\\Servicing\\14.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev14.VnsExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\14.0\\xcor",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev14.VnsExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\14.0\\xcor",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev14.DesktopExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\14.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev14.DesktopExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\14.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev12.WinExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\winexpress\\Servicing\\12.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev12.WinExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\winexpress\\Servicing\\12.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev12.VnsExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\12.0\\xcor",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev12.VnsExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\12.0\\xcor",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev12.DesktopExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\12.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev12.DesktopExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\12.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev11.WinExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\win8express\\Servicing\\11.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev11.WinExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\win8express\\Servicing\\11.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev11.VnsExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\11.0\\xcor",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev11.VnsExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\vns\\Servicing\\11.0\\xcor",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "Dev11.DesktopExpress.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\11.0\\coremsi",
+        "Value": "Version"
+      },
+      {
+        "Id": "Dev11.DesktopExpress.UpdateVersion",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\DevDiv\\wdexpress\\Servicing\\11.0\\coremsi",
+        "Value": "UpdateVersion"
+      },
+      {
+        "Id": "NetFX.NetFX35.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\NET Framework Setup\\NDP\\v3.5",
+        "Value": "Version"
+      },
+      {
+        "Id": "VC.14.Runtime.x86.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\VisualStudio\\14.0\\VC\\Runtimes\\x86",
+        "Value": "Version"
+      },
+      {
+        "Id": "VC.14.Runtime.x64.Version",
+        "Hive": "hklm",
+        "Key": "software\\Microsoft\\VisualStudio\\14.0\\VC\\Runtimes\\x64",
+        "Value": "Version"
+      }
+    ]
+  }
+}

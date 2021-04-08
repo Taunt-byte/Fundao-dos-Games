@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Ligne de commande Visual Studio</h1>
+    <h2>Utilisation&#160;: vs_setup.exe [command [options]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Commande de ligne de commande</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>Modifie un produit installé.</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>Met à jour un produit installé.</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>Répare un produit installé.</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>Désinstalle un produit installé.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Option de ligne de commande</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;rép></code></td>
+                    <td>Répertoire d’installation sur lequel l’instance agit. Pour la commande install, c’est là que l’instance sera installée. Pour les autres commandes, c’est là que l’instance précédemment installée était installée.</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;id></code></td>
+                    <td>ID du produit de l’instance qui sera installée. Obligatoire pour la commande install, ignoré pour les autres commandes si --installPath est spécifié.</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;rép></code></td>
+                    <td>Spécifie un répertoire où créer un cache d’installation hors connexion.</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>Utilisez cette option avec le commutateur --layout. Elle vérifie si des charges utiles sont manquantes dans le répertoire du cache hors connexion et si elles sont valides ou pas.</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>Utilisez cette option avec le commutateur --layout. Elle effectue le même contrôle de validité que le commutateur --verify et résout tous les problèmes identifiés.</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;chemin de fichier vers un manifeste de catalogue></code> <em>[&lt;chemin de fichier vers un manifeste de catalogue> ...]</em></td>
+                    <td>Utilisez cette option avec le commutateur --layout. Elle nettoie le répertoire du cache hors connexion et supprime les packages obsolètes trouvés dans le ou les manifestes de catalogue spécifiés.</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;paramètre-langue></code> <em>[&lt;paramètre-langue> ...]</em></td>
+                    <td>Utilisé avec le commutateur --layout. Spécifie la ou les langue(s) dans lesquelles le cache d’installation hors connexion est créé. Vous trouverez une liste des paramètres de langue pris en charge ci-dessous.</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;ID de charge de travail ou de composant></code><em>[&lt;ID de charge de travail ou de composant> ...]</em></td>
+                    <td>Définit un artefact (groupe, charge de travail ou composant) à ajouter à l’installation. Peut apparaître plusieurs fois sur la ligne de commande.<br />Les composants obligatoires de l’artefact sont installés, mais pas les composants recommandés ou facultatifs. Vous pouvez contrôler les composants supplémentaires avec --includeRecommended et/ou --includeOptional. Pour un contrôle plus précis, vous pouvez ajouter ";includeRecommended" et/ou ";includeOptional" à l’ID d’artefact (par ex. "--add Workload1;includeRecommended" ou "--add Workload2;includeOptional;includeRecommended").<br />Facultatif pour les commandes install et modify, ignoré pour les commandes update, repair et uninstall.</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;ID de charge de travail ou de composant></code><em>[&lt;ID de charge de travail ou de composant> ...]</em></td>
+                    <td>Définit un artefact (groupe, charge de travail ou composant) à supprimer de l’installation. Peut apparaître plusieurs fois sur la ligne de commande. Facultatif pour les commandes install et modify, ignoré pour les commandes update, repair et uninstall.</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>Permet d’installer la totalité des charges de travail et des composants d’un produit.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>Inclut les composants recommandés des charges de travail qui sont installées, mais pas les composants facultatifs. Les charges de travail sont spécifiées avec --allWorkloads ou --add.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>Inclut les composants facultatifs des charges de travail qui sont installées, mais pas les composants recommandés. Les charges de travail sont spécifiées avec --allWorkloads ou --add.</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>N’affiche aucune interface utilisateur pendant l’installation.</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>Affiche l’interface utilisateur, mais ne demande aucune interaction utilisateur.</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>En sa présence, les commandes avec --passive ou --quiet ne redémarrent pas automatiquement l’ordinateur (si demandé). Ignoré si --passive et --quiet ne sont pas spécifiés.</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;paramètre-langue></code></td>
+                    <td>Change la langue d’affichage de l’interface utilisateur du programme d’installation. Le paramètre est persistant.</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;nom></code></td>
+                    <td>Définit le surnom à assigner à un produit installé. Le surnom ne peut pas dépasser 10&#160;caractères.</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>Affiche l’utilisation des paramètres.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Option de ligne de commande avancée</strong></th>
+                    <th><strong>Description</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;id></code></td>
+                    <td>ID du canal de l’instance qui est installée. Obligatoire pour la commande install, ignoré pour les autres commandes si --installPath est spécifié.</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;uri></code></td>
+                    <td>URI du manifeste de canal. Peut être utilisé pour la commande install, ignoré pour les autres commandes.</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;uri></code></td>
+                    <td>URI du manifeste de canal à utiliser pour l’installation. L’URI spécifié par --channelUri (qui doit être spécifié quand --installChannelUri est spécifié) est utilisé pour détecter les mises à jour. Si les mises à jour ne sont pas souhaitées, --channelUri doit être spécifié sans argument. Peut être utilisé pour la commande install, ignoré pour les autres commandes.</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;uri></code></td>
+                    <td>URI du manifeste de catalogue à utiliser pour l’installation. Si spécifié, le gestionnaire de canaux essaie de télécharger le manifeste de catalogue à partir de l’URI avant d’utiliser l’URI dans le manifeste de canal d’installation. Ce paramètre est utilisé pour prendre en charge l’installation hors connexion, où le cache de mise en page sera créé avec le catalogue de produits déjà téléchargé. Peut être utilisé pour la commande install, ignoré pour les autres commandes.</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;path></code></td>
+                    <td>URI ou chemin d’un fichier réponse.</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;paramètre-langue></code></td>
+                    <td>Définit la langue d’un artefact (groupe, charge de travail ou composant) à installer. Peut apparaître plusieurs fois sur la ligne de commande. Facultatif pour les commandes install et modify, ignoré pour les commandes update, repair et uninstall. En cas d’absence, l’installation utilise les paramètres régionaux de l’ordinateur.</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;paramètre-langue></code></td>
+                    <td>Définit la langue d’un artefact (groupe, charge de travail ou composant) à supprimer. Peut apparaître plusieurs fois sur la ligne de commande. Facultatif pour les commandes install et modify, ignoré pour les commandes update, repair et uninstall.</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>Le processus attend la fin de l’installation avant de retourner un code de sortie. Utile pour l’automatisation des installations quand il faut attendre la fin de l’installation pour gérer le code de retour de cette installation.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Paramètres de langue</th>
+                    <th>Langue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>Tchèque</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>Allemand</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>Anglais</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>Espagnol</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>Français</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>Italien</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>Japonais</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>Coréen</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>Polonais</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>Portugais - Brésil</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>Russe</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>Turc</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>Chinois - Simplifié</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>Chinois - Traditionnel</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />Pour obtenir des instructions détaillées, consultez <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x40C">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x40C</a> </span></p>
+    <p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio コマンド ライン</h1>
+    <h2>使用法: vs_setup.exe [コマンド [オプション]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>コマンド ライン コマンド</strong></th>
+                    <th><strong>説明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>インストールされている製品を変更します。</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>インストールされている製品を更新します。</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>インストールされている製品を修復します。</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>インストールされている製品をアンインストールします。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>コマンド ライン オプション</strong></th>
+                    <th><strong>説明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;ディレクトリ></code></td>
+                    <td>インスタンスが動作するインストール ディレクトリ。install コマンドの場合、これはインスタンスがインストールされる場所です。他のコマンドの場合、これは以前にインストールされたインスタンスがインストールされた場所です。</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;ID></code></td>
+                    <td>インストールするインスタンスの製品の ID。これは install コマンドで必須です。--installPath が指定されている場合、他のコマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;ディレクトリ></code></td>
+                    <td>オフライン インストール キャッシュを作成するためのディレクトリを指定します。</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>このオプションは、--layout スイッチと共に使用します。オフライン キャッシュ ディレクトリに見つからないペイロードがないかどうか、およびそれらが有効であるかどうかを確認します。</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>このオプションは、--layout スイッチと共に使用します。これは "--verify" スイッチと同じ有効性チェックを行うとともに、特定された問題を修正します。</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;カタログ マニフェストへのファイル パス></code> <em>[&lt;カタログ マニフェストへのファイル パス> ...]</em></td>
+                    <td>このオプションは、--layout スイッチと共に使用します。オフライン キャッシュ ディレクトリをクリーンし、指定されたカタログ マニフェストで見つかったすべての古いパッケージを削除します。</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;言語-ロケール></code> <em>[&lt;言語-ロケール> ...]</em></td>
+                    <td>これは、--layout スイッチと共に使用されます。オフライン インストール キャッシュが作成される言語を指定します。サポートされている言語ロケールについては、下の完全な一覧を参照してください。</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;ワークロードまたはコンポーネント ID></code><em>[&lt;ワークロードまたはコンポーネント ID> ...]</em></td>
+                    <td>これは、インストールに追加される成果物 (グループ、ワークロード、またはコンポーネント) を定義します。コマンド ラインで複数回表示されることがあります。<br />成果物の必須コンポーネントがインストールされます。ただし、推奨コンポーネントまたはオプション コンポーネントはインストールされません。--includeRecommended および/または --includeOptional を使用して、追加のコンポーネントをグローバルに制御できます。よりきめ細かく制御する場合は、";includeRecommended" および/または ";includeOptional" を artifactId ("--add Workload1;includeRecommended" または "--add Workload2;includeOptional;includeRecommended" など) に追加することができます。<br />install コマンドと modify コマンドでは省略可能です。update、repair、および uninstall コマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;ワークロードまたはコンポーネント ID></code> <em>[&lt;ワークロードまたはコンポーネント ID> ...]</em></td>
+                    <td>これは、インストールから削除される成果物 (グループ、ワークロード、またはコンポーネント) を定義します。コマンド ラインで複数回表示されることがあります。install コマンドと modify コマンドでは省略可能です。update、repair、および uninstall コマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>製品のすべてのワークロードとコンポーネントをインストールするかどうか。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>インストールされているすべてのワークロードの推奨コンポーネントが含まれます。ただし、オプション コンポーネントは含まれません。ワークロードは --allWorkloads または --add のいずれかで指定されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>インストールされているすべてのワークロードのオプション コンポーネントが含まれます。ただし、推奨コンポーネントは含まれません。ワークロードは --allWorkloads または --add のいずれかで指定されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>インストールの実行中にいずれのユーザー インターフェイスも表示しません。</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>ユーザー インターフェイスを表示しますが、ユーザーからの対話式操作は要求しません。</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>存在する場合、--passive または --quiet を指定したコマンドは、マシンを自動的に再起動しません (必要な場合)。--passive と --quiet のどちらも指定されない場合、これは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;言語-ロケール></code></td>
+                    <td>インストーラーのユーザー インターフェイスの表示言語を変更します。設定は保持されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;名前></code></td>
+                    <td>これは、インストールされた製品に割り当てるニックネームを定義します。名前は 10 文字を超えることができません。</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>パラメーターの使用法を表示します。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>詳細なコマンド ライン オプション</strong></th>
+                    <th><strong>説明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;ID></code></td>
+                    <td>インストールするインスタンスのチャネルの ID。これは install コマンドで必須です。--installPath が指定されている場合、他のコマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;URI></code></td>
+                    <td>チャネル マニフェストの URI。これは install コマンドで使用できます。他のコマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;URI></code></td>
+                    <td>インストールに使用するチャネル マニフェストの URI。--channelUri (--installChannelUri が指定されている場合に指定する必要がある) で指定された URI が更新プログラムの検出に使用されます。更新プログラムを使用しない場合は、引数なしで --channelUri を指定する必要があります。これは install コマンドで使用できます。他のコマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;URI></code></td>
+                    <td>インストールに使用するカタログ マニフェストの URI。指定した場合、チャネル マネージャーは、インストール チャネル マニフェストの URI を使用する前に、この URI からカタログ マニフェストをダウンロードしようとします。このパラメーターは、オフライン インストールをサポートするために使用され、レイアウトのキャッシュが既にダウンロードされた製品カタログとともに作成されます。これは install コマンドで使用できます。他のコマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;パス></code></td>
+                    <td>応答ファイルへの URI またはパス。</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;言語-ロケール></code></td>
+                    <td>これは、インストール対象の成果物 (グループ、ワークロード、またはコンポーネント) の言語を定義します。コマンド ラインで複数回表示されることがあります。install コマンドと modify コマンドでは省略可能です。update、repair、および uninstall コマンドでは無視されます。存在しない場合、インストールではマシンのロケールが使用されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;言語-ロケール></code></td>
+                    <td>これは、削除対象の成果物 (グループ、ワークロード、またはコンポーネント) の言語を定義します。コマンド ラインで複数回表示されることがあります。install コマンドと modify コマンドでは省略可能です。update、repair、および uninstall コマンドでは無視されます。</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>プロセスは、インストールが完了するまで待機してから、終了コードを返します。これはインストールの自動化に役立ちます。インストールの自動化では、インストールの完了を待ち、インストールからのリターン コードを処理する必要があります。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>言語-ロケール</th>
+                    <th>言語</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>チェコ語</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>ドイツ語</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>英語</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>スペイン語</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>フランス語</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>イタリア語</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>日本語</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>韓国語</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>ポーランド語</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>ポルトガル語 - ブラジル</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>ロシア語</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>トルコ語</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>中国語 - 簡体字</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>中国語 - 繁体字</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />手順の詳細については、<span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x411">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x411</a> </span>を参照してください。</p>
+    <p>&#160;</p>
+</body>
+</html>

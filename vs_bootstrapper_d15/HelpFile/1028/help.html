@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio 命令列</h1>
+    <h2>使用方式: vs_setup.exe [命令 [選項]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>命令列命令</strong></th>
+                    <th><strong>描述</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>修改安裝的產品。</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>更新安裝的產品。</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>修復安裝的產品。</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>將安裝的產品解除安裝。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>命令列選項</strong></th>
+                    <th><strong>描述</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;dir></code></td>
+                    <td>執行個體動作執行所在安裝目錄。若是 install 命令，這會是執行個體的安裝位置。若是其他命令，這是先前安裝的執行個體安裝位置。</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;id></code></td>
+                    <td>要安裝的執行個體產品識別碼。這對 install 命令而言是必要項，如果指定了 --installPath，其他命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;dir></code></td>
+                    <td>指定要建立離線安裝快取的目錄。</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>使用此選項搭配 --layout 參數。這會確認離線快取目錄是否缺少任何承載，以及承載的有效性。</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>使用此選項搭配 --layout 參數。這會執行與 "--verify" 參數的驗證檢查，並會修正所找出的問題。</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;目錄資訊清單的檔案路徑></code> <em>[&lt;目錄資訊清單的檔案路徑> ...]</em></td>
+                    <td>使用此選項搭配 --layout 參數。這會清除離線快取目錄，並刪除在指定目錄資訊清單中所找到要淘汰的套件。</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;語言地區設定></code> <em>[&lt;語言地區設定> ...]</em></td>
+                    <td>此搭配 --layout 參數使用。其指定離線安裝快取將以何種語言安裝。請於下方查看受支援語言地區設定的完整清單。</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;工作負載或元件識別碼></code><em>[&lt;工作負載或元件識別碼> ...]</em></td>
+                    <td>其會定義要新增至安裝的成品 (群組、工作負載或元件)。其可在命令列上出現多次。<br />成品的必要元件會安裝，但建議或選用元件則不會。您可使用 --includeRecommended 及 (或) --includeOptional 以全域方式控制其他元件。若需更精細地控制，您可將 ";includeRecommended" 及 (或) ";includeOptional" 附加至 artifactId (例如 "--add Workload1;includeRecommended" 或 "--add Workload2;includeOptional;includeRecommended")。<br />這對 install 和 modify 命令而言是選用項，update、repair 及 uninstall 命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;工作負載或元件識別碼></code> <em>[&lt;工作負載或元件識別碼> ...]</em></td>
+                    <td>其會定義要從安裝移除的成品 (群組、工作負載或元件)。其可在命令列上出現多次。這對 install 和 modify 命令而言是選用項，update、repair 及 uninstall 命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>是否要安裝產品的所有工作負載及元件。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>包含任何已安裝工作負載的建議元件，但不包括選用元件。工作負載以 --allWorkloads 或 --add 指定。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>包含任何已安裝工作負載的選用元件，但不包括建議元件。工作負載以 --allWorkloads 或 --add 指定。</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>執行安裝時不顯示任何使用者介面。</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>顯示使用者介面，但不向使用者要求任何互動。</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>若存在，具備 --passive 或 --quiet 的命令將不會自動重新啟動電腦 (如需要)。若 --passive 或 --quiet 皆未指定，則會予以略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;語言地區設定></code></td>
+                    <td>為安裝程式變更使用者介面的顯示語言。將保存設定。</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;名稱></code></td>
+                    <td>其會定義要指派至安裝之產品的暱稱。暱稱的長度不能大於 10 個字元。</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>顯示參數使用方式。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>進階命令列選項</strong></th>
+                    <th><strong>描述</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;識別碼></code></td>
+                    <td>要安裝之執行個體的通道識別碼。這對 install 命令而言是必要項，如果指定了 --installPath，其他命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;URI></code></td>
+                    <td>通道資訊清單的 URI。這可用於 install 命令; 其他命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;URI></code></td>
+                    <td>要用於安裝之通道資訊清單的 URI。--channelUri 所指定的 URI (指定 --installChannelUri 時必須予以指定) 將用於偵測更新。若不需要更新，必須不使用引數來指定 --channelUri。這可用於 install 命令; 其他命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;URI></code></td>
+                    <td>要用於安裝之目錄資訊清單的 URI。如有指定，通道管理員會在使用 install 通道資訊清單中的 URI 前，嘗試從此 URI 下載目錄資訊清單。此參數的用途是支援離線安裝，過程中會透過已經下載的產品目錄建立配置快取。這可用於 install 命令; 其他命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;路徑></code></td>
+                    <td>回應檔的 URI 或路徑。</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;語言地區設定></code></td>
+                    <td>其會定義要安裝之成品 (群組、工作負載或元件) 的語言。其可在命令列上出現多次。這對 install 和 modify 命令而言是選用項，update、repair 及 uninstall 命令則會略過。若不存在，安裝會使用電腦地區設定。</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;語言地區設定></code></td>
+                    <td>其會定義要移除之成品 (群組、工作負載或元件) 的語言。其可在命令列上出現多次。這對 install 和 modify 命令而言是選用項，update、repair 及 uninstall 命令則會略過。</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>此處理序會等候安裝成之後，才傳回結束代碼。對於要等候安裝完成，才能處理安裝傳回之代碼的自動安裝而言，此選項十分實用。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>語言地區設定</th>
+                    <th>語言</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>捷克文</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>德文</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>英文</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>西班牙文</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>法文</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>義大利文</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>日文</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>韓文</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>波蘭文</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>葡萄牙文 (巴西)</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>俄文</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>土耳其文</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>簡體中文</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>繁體中文</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />如需詳細指引，請前往 <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x404">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x404</a> </span></p>
+    <p>&#160;</p>
+</body>
+</html>

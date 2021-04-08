@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio komut satırı</h1>
+    <h2>Kullanım: vs_setup.exe [komut [seçenekler]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Komut satırı komutu</strong></th>
+                    <th><strong>Açıklama</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>Yüklü bir ürünü değiştirir.</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>Yüklü bir ürünü güncelleştirir.</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>Yüklü bir ürünü onarır.</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>Yüklü bir ürünü kaldırır.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Komut satırı seçeneği</strong></th>
+                    <th><strong>Açıklama</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;dizin></code></td>
+                    <td>Örneğin işlem yapacağı yükleme dizini. install komutu için bu, örneğin yükleneceği dizindir. diğer komutlar için bu, önceden yüklenen örneğin yüklendiği dizindir.</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;kimlik></code></td>
+                    <td>Yüklenecek örnek için ürün kimliği. Bu, install komutu için gereklidir ancak --installPath belirtilmişse diğer komutlar için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;dizin></code></td>
+                    <td>Çevrimdışı yükleme önbelleği oluşturmak için bir dizin belirtir.</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>Bu seçeneği --layout anahtarıyla birlikte kullanın. Bu seçenek çevrimdışı önbellek dizininde eksik yük olup olmadığını ve bu yüklerin geçerli olup olmadığını doğrular.</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>Bu seçeneği --layout anahtarıyla birlikte kullanın. Bu seçenek "--verify" anahtarıyla aynı geçerlilik denetimini gerçekleştirir ve belirlenen sorunları giderir.</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;bir katalog bildiriminin dosya yolu></code> <em>[&lt;bir katalog bildiriminin dosya yolu> ...]</em></td>
+                    <td>Bu seçeneği --layout anahtarıyla birlikte kullanın. Bu seçenek çevrimdışı önbellek dizinini temizler ve belirtilen katalog bildirimlerinde bulunan eski paketleri siler.</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;dil-yerel ayar></code> <em>[&lt;dil-yerel ayar> ...]</em></td>
+                    <td>Bu, --layout anahtarı ile birlikte kullanılır. Çevrimdışı yükleme önbelleğinin oluşturulacağı dilleri belirtir. Desteklenen dil-yerel ayarların tam listesini aşağıda bulabilirsiniz.</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;iş yükü veya bileşen kimliği></code><em>[&lt;iş yükü veya bileşen kimliği> ...]</em></td>
+                    <td>Bu, yüklemeye eklenecek bir yapıtı (grup, iş yükü veya bileşen) tanımlar. Komut satırında birden çok kez görünebilir.<br />Yapıtın gerekli bileşenleri yüklendi ancak önerilen veya isteğe bağlı bileşenler yüklenmedi. --includeRecommended ve/veya --includeOptional kullanarak, ek bileşenleri global olarak denetleyebilirsiniz. Daha ayrıntılı denetim için, artifactId’ye ";includeRecommended" ve/veya ";includeOptional" ekleyebilirsiniz (örneğin "--add Workload1;includeRecommended" veya "--add Workload2;includeOptional;includeRecommended").<br />Bu, install ve modify komutları için isteğe bağlıdır ancak update, repair ve uninstall komutları için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;iş yükü veya bileşen kimliği></code> <em>[&lt;iş yükü veya bileşen kimliği> ...]</em></td>
+                    <td>Bu, yüklemeden kaldırılacak bir yapıtı (grup, iş yükü veya bileşen) tanımlar. Komut satırında birden çok kez görünebilir. Bu, install ve modify komutları için isteğe bağlıdır ancak update, repair ve uninstall komutları için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>Bir ürün için tüm iş yükleri ve bileşenlerin yüklenip yüklenmeyeceğini belirtir.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>Yüklenen iş yükleri için önerilen bileşenleri içerir ancak isteğe bağlı bileşenleri içermez. İş yükleri --allWorkloads veya --add ile belirtilir.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>Yüklenen iş yükleri için isteğe bağlı bileşenleri içerir ancak önerilen bileşenleri içermez. İş yükleri --allWorkloads veya --add ile belirtilir.</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>Yükleme gerçekleştirilirken kullanıcı arabirimini göstermez.</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>Kullanıcı arabirimini gösterir ancak kullanıcı etkileşimi gerektirmez.</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>Varsa, --passive veya --quiet içeren komutlar, gerektiği durumlarda makineyi otomatik olarak yeniden başlatmaz. --passive veya --quiet belirtilirse bu yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;dil-yerel ayar></code></td>
+                    <td>Yükleyici için kullanıcı arabiriminin görüntüleme dilini değiştirir. Ayar kalıcı olarak uygulanır.</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;ad></code></td>
+                    <td>Bu, yüklenen bir ürüne atanacak takma adı tanımlar. Takma ad 10 karakterden uzun olamaz.</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>Parametre kullanımını görüntüler.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Gelişmiş komut satırı seçeneği</strong></th>
+                    <th><strong>Açıklama</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;kimlik></code></td>
+                    <td>Yüklenecek örnek için kanal kimliği. Bu, install komutu için gereklidir ancak --installPath belirtilmişse diğer komutlar için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;URI></code></td>
+                    <td>Kanal bildiriminin URI’si. Bu, install komutu için kullanılabilir ancak diğer komutlar için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;URI></code></td>
+                    <td>Yükleme için kullanılacak kanal bildiriminin URI’si. Güncelleştirmeleri algılamak için, --channelUri tarafından belirtilen URI kullanılır (--installChannelUri belirtilirken girilmelidir). Güncelleştirmeler istenmiyorsa, --channelUri bağımsız değişken olmadan belirtilmelidir. Bu, install komutu için kullanılabilir ancak diğer komutlar için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;URI></code></td>
+                    <td>Yükleme için kullanılacak katalog bildiriminin URI’si. Belirtilmişse, kanal yöneticisi, bu URI’yi kanal bildirimi yükleme işleminde kullanmadan önce URI’den katalog bildirimini indirmeyi dener. Bu parametre, ürün kataloğunun önceden indirildiği ve düzen önbelleğinin oluşturulacağı dizinde çevrimdışı yüklemeyi desteklemek için kullanılır. Bu, install komutu için kullanılabilir ancak diğer komutlar için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;yol></code></td>
+                    <td>Bir yanıt dosyasının URI’si veya yolu.</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;dil-yerel ayar></code></td>
+                    <td>Bu, yüklenecek bir yapıtın (grup, iş yükü veya bileşen) dilini tanımlar. Komut satırında birden çok kez görünebilir. Bu, install ve modify komutları için isteğe bağlıdır ancak update, repair ve uninstall komutları için yoksayılır. Yoksa, yükleme makine yerel ayarını kullanır.</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;dil-yerel ayar></code></td>
+                    <td>Bu, kaldırılacak bir yapıtın (grup, iş yükü veya bileşen) dilini tanımlar. Komut satırında birden çok kez görünebilir. Bu, install ve modify komutları için isteğe bağlıdır ancak update, repair ve uninstall komutları için yoksayılır.</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>İşlem, yüklemenin tamamlanmasını bekler ve bir çıkış kodu döndürür. Bu, bir yüklemenin dönüş kodunu işlemek için bu yüklemenin tamamlanmasını beklemeyi gerektiren yüklemeleri otomatikleştirirken kullanışlıdır.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Dil-yerel ayar</th>
+                    <th>Dil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>Çekçe</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>Almanca</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>İngilizce</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>İspanyolca</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>Fransızca</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>İtalyanca</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>Japonca</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>Kore dili</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>Lehçe</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>Portekizce - Brezilya</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>Rusça</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>Türkçe</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>Çince - Basitleştirilmiş</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>Çince - Geleneksel</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />Ayrıntılı bilgiler için lütfen <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x41F">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x41F</a> </span> adresini ziyaret edin</p>
+    <p>&#160;</p>
+</body>
+</html>

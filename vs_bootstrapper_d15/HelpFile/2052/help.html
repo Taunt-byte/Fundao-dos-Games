@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio 命令行</h1>
+    <h2>用法：vs_setup.exe [命令[选项]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>命令行命令</strong></th>
+                    <th><strong>说明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>修改已安装的产品。</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>更新已安装的产品。</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>修复已安装的产品。</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>卸载已安装的产品。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>命令行选项</strong></th>
+                    <th><strong>说明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;目录></code></td>
+                    <td>要操作的实例的安装目录。对于安装命令，这是指将安装实例的位置。对于其他命令，这是指之前已安装实例所在的位置。</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;id></code></td>
+                    <td>将要安装的实例的产品 ID。安装命令需要此值；如果已指定 --installPath，则对其他命令忽略此值。</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;目录></code></td>
+                    <td>指定用于创建脱机安装缓存的目录。</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>此选项与 --layout switch 一起使用。它会验证离线缓存目录中是否缺少任何有效负载，以及它们是否有效。</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>此选项与 --layout switch 一起使用。它会执行与“--verify”开关相同的有效性检查，并修复已识别的任何问题。</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;目录清单的文件路径></code> <em>[&lt;目录清单的文件路径> ...]</em></td>
+                    <td>此选项与 --layout switch 一起使用。它会清理离线缓存目录，并删除指定目录清单中找到的任何已过时的包。</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;语言-区域设置></code> <em>[&lt;语言-区域设置> ...]</em></td>
+                    <td>该命令行配合 --layout switch 使用。指定将按其创建脱机安装缓存的语言。请参阅下方受支持的语言-区域设置的完整列表。</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;工作负荷或组件 ID></code><em>[&lt;工作负荷或组件 ID> ...]</em></td>
+                    <td>该命令行定义要添加到安装的项目（组、工作负荷或组件）。可在命令行中多次出现。<br />已安装项目的必需组件，但未安装建议的组件或可选组件。可使用 --includeRecommended 和/或 --includeOptional 全局控制其他组件。若要实现更精确的控制，可将“;includeRecommended”和/或“;includeOptional”附加到 artifactId（例如“--add Workload1;includeRecommended”或“--add Workload2;includeOptional;includeRecommended”）。<br />对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;工作负荷或组件 ID></code> <em>[&lt;工作负荷或组件 ID> ...]</em></td>
+                    <td>该命令行定义要从安装中删除的项目（组、工作负荷或组件）。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>是否安装产品的所有工作负荷和组件。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>包含已安装的所有工作负荷的推荐组件，但不包含可选组件。可使用 --allWorkloads 或 --add 指定工作负荷。</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>包含已安装的所有工作负荷的可选组件，但不包含推荐组件。可使用 --allWorkloads 或 --add 指定工作负荷。</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>执行安装时不显示任何用户界面。</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>显示用户界面，但不请求用户进行任何交互。</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>如果存在，则带有 --passive 或 --quiet 的命令不会自动重启计算机（若需要）。如果未指定 --passive 和 --quiet，则忽略此命令行。</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;语言-区域设置></code></td>
+                    <td>更改安装程序用户界面的显示语言。设置将被保留。</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;名称></code></td>
+                    <td>此命令行定义要分配给已安装产品的昵称。昵称长度不能超过 10 个字符。</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>显示参数使用情况。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>高级命令行选项</strong></th>
+                    <th><strong>说明</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;id></code></td>
+                    <td>将要安装的实例的通道 ID。安装命令需要此值；如果已指定 --installPath，则对其他命令忽略此值。</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;uri></code></td>
+                    <td>通道清单的 URI。此值可用于安装命令；对于其他命令则可忽略此值。</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;uri></code></td>
+                    <td>用于安装的通道清单的 URI。--channelUri 指定的 URI（必须在指定 --installChannelUri 时指定）将用于检测更新。如果不需要更新，则 --channelUri 必须无参数指定。此值可用于安装命令；对于其他命令则可忽略此值。</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;uri></code></td>
+                    <td>用于安装的目录清单的 URI。如果已指定，则通道管理器将尝试从此 URI 下载目录清单，然后在安装通道清单中使用 URI。此参数用于支持脱机安装，其中将使用已下载的产品目录创建布局缓存。此值可用于安装命令；对于其他命令则可忽略此值。</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;路径></code></td>
+                    <td>响应文件的 URI 或路径。</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;语言-区域设置></code></td>
+                    <td>该命令行定义要安装的项目（组、工作负荷或组件）的语言。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。如果不存在，则安装将使用计算机区域设置。</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;语言-区域设置></code></td>
+                    <td>该命令行定义要删除的项目（组、工作负荷或组件）的语言。可在命令行中多次出现。对于安装和修改命令，该命令是可选项；对于更新、修复和卸载命令，则忽略该命令。</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>返回退出代码之前，该进程会等待安装完成。自动安装过程中，需要等待安装完成以便处理从该安装返回的代码时，此进程非常有用。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>语言-区域设置</th>
+                    <th>语言</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>捷克语</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>德语</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>英语</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>西班牙语</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>法语</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>意大利语</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>日语</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>朝鲜语</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>波兰语</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>葡萄牙语 - 巴西</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>俄语</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>土耳其语</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>简体中文</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>繁体中文</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />有关详细说明，请访问 <span class="style1"><a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x804">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x804</a></span></p>
+    <p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,271 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+            font-size: 12pt;
+            background: #ffffff;
+            padding-bottom: 12pt;
+            margin: 0px;
+            color: #000000;
+            padding-top: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner {
+            padding-right: 0px;
+            padding-left: 5px;
+            font-weight: bold;
+            font-size: 10pt;
+            padding-bottom: 6pt;
+            width: 100%;
+            padding-top: 6pt;
+            background-color: #68217A;
+            text-align: left;
+        }
+
+        .style1 {
+            font-family: Arial;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><a name="top">Microsoft Visual Studio 2017</a></div>
+    <h1>Visual Studio-Befehlszeile</h1>
+    <h2>Syntax: vs_setup.exe [Befehl [Optionen]]</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Befehlszeilenbefehl</strong></th>
+                    <th><strong>Beschreibung</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>modify</code></td>
+                    <td>Ändert ein installiertes Produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>update</code></td>
+                    <td>Aktualisiert ein installiertes Produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>repair</code></td>
+                    <td>Repariert ein installiertes Produkt.</td>
+                </tr>
+                <tr>
+                    <td><code>uninstall</code></td>
+                    <td>Deinstalliert ein installiertes Produkt.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Befehlszeilenoption</strong></th>
+                    <th><strong>Beschreibung</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--installPath &lt;Verzeichnis></code></td>
+                    <td>Das Installationsverzeichnis der Instanz, für die eine Aktion ausgeführt werden soll. Beim Installationsbefehl handelt es sich hierbei um den Installationsort der Instanz. Bei anderen Befehlen ist dies der Installationsort der zuvor installierten Instanz.</td>
+                </tr>
+                <tr>
+                    <td><code>--productId &lt;ID></code></td>
+                    <td>Die ID des Produkts für die zu installierende Instanz. Diese ist für den Installationsbefehl erforderlich. Bei anderen Befehlen wird sie ignoriert, wenn „--installPath“ festgelegt wurde.</td>
+                </tr>
+                <tr>
+                    <td><code>--layout &lt;Verzeichnis></code></td>
+                    <td>Gibt ein Verzeichnis für die Erstellung eines Offlineinstallationscaches an.</td>
+                </tr>
+                <tr>
+                    <td><code>--verify</code></td>
+                    <td>Verwenden Sie diese Option zusammen mit dem Schalter „--layout“. Sie überprüft, ob Nutzlasten im Offlinecacheverzeichnis fehlen und ob die Nutzlasten gültig sind.</td>
+                </tr>
+                <tr>
+                    <td><code>--fix</code></td>
+                    <td>Verwenden Sie diese Option zusammen mit dem Schalter „--layout“. Sie führt die gleiche Gültigkeitsprüfung wie der Schalter „--verify“ aus und behebt die ermittelten Probleme.</td>
+                </tr>
+                <tr>
+                    <td><code>--clean &lt;Dateipfad zu einem Katalogmanifest></code> <em>[&lt;Dateipfad zu einem Katalogmanifest> ...]</em></td>
+                    <td>Verwenden Sie diese Option zusammen mit dem Schalter „--layout“. Sie bereinigt das Offlinecacheverzeichnis und löscht veraltete Pakete, die in den angegebenen Katalogmanifesten gefunden wurden.</td>
+                </tr>
+                <tr>
+                    <td><code>--lang &lt;Sprache-Gebietsschema></code> <em>[&lt;Sprache-Gebietsschema> ...]</em></td>
+                    <td>Wird in Kombination mit dem Schalter „--layout“ verwendet. Gibt die Sprachen an, in denen der Offlineinstallationscache erstellt wird. Eine vollständige Liste mit unterstützten Sprachen/Gebietsschemas finden Sie weiter unten.</td>
+                </tr>
+                <tr>
+                    <td><code>--add &lt;Workload- oder Komponenten-ID></code> <em>[&lt;Workload oder Komponenten-ID> ...]</em></td>
+                    <td>Definiert ein Artefakt (Gruppe, Workload oder Komponente), das der Installation hinzugefügt werden soll. Kann mehrmals in der Befehlszeile verwendet werden.<br />Die für das Artefakt benötigten Komponenten werden installiert. Empfohlene oder optionale Komponenten werden hingegen nicht installiert. Zusätzliche Komponenten können global gesteuert werden. Verwenden Sie hierzu „--includeRecommended“ und/oder „--includeOptional“. Eine präzisere Steuerung erreichen Sie, indem Sie „;includeRecommended“ und/oder „;includeOptional“ an die Artefakt-ID anfügen. (Beispiel: „--add Workload1;includeRecommended“ oder „--add Workload2;includeOptional;includeRecommended“)<br />Dies ist für zum Installieren und Ändern optional, zum Aktualisieren, Reparieren und Deinstallieren wird es ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--remove &lt;Workload- oder Komponenten-ID></code> <em>[&lt;Workload oder Komponenten-ID> ...]</em></td>
+                    <td>Definiert ein Artefakt (Gruppe, Workload oder Komponente), das aus der Installation entfernt werden soll. Kann mehrmals in der Befehlszeile verwendet werden. Dies ist für zum Installieren und Ändern optional, zum Aktualisieren, Reparieren und Deinstallieren wird es ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--all</code></td>
+                    <td>Gibt an, ob alle Workloads und Komponenten für ein Produkt installiert werden sollen.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeRecommended</code></td>
+                    <td>Schließt die empfohlenen Komponenten (aber nicht die optionalen Komponenten) für alle installierten Workloads ein. Die Workloads werden entweder mit „--allWorkloads“ oder mit „--add“ angegeben.</td>
+                </tr>
+                <tr>
+                    <td><code>--includeOptional</code></td>
+                    <td>Schließt die optionalen Komponenten (aber nicht die empfohlenen Komponenten) für alle installierten Workloads ein. Die Workloads werden entweder mit „--allWorkloads“ oder mit „--add“ angegeben.</td>
+                </tr>
+                <tr>
+                    <td><code>--quiet, -q</code></td>
+                    <td>Gibt an, dass während der Installation keine Benutzeroberfläche angezeigt werden soll.</td>
+                </tr>
+                <tr>
+                    <td><code>--passive, -p</code></td>
+                    <td>Gibt an, dass die Benutzeroberfläche angezeigt werden, aber keine Benutzerinteraktion angefordert werden soll.</td>
+                </tr>
+                <tr>
+                    <td><code>--norestart</code></td>
+                    <td>Ist diese Option angegeben, wird der Computer bei Verwendung von „--passive“ oder „--quiet“ nicht automatisch neu gestartet, falls dies erforderlich sein sollte. Wird ignoriert, wenn weder „--passive“ noch „--quiet“ angegeben ist.</td>
+                </tr>
+                <tr>
+                    <td><code>--locale &lt;Sprache-Gebietsschema></code></td>
+                    <td>Ändert die Anzeigesprache der Benutzeroberfläche für den Installer. Die Einstellung wird gespeichert.</td>
+                </tr>
+                <tr>
+                    <td><code>--nickname &lt;Name></code></td>
+                    <td>Definiert den Spitznamen, der einem installierten Produkt zugewiesen werden soll. Der Spitzname darf maximal zehn Zeichen umfassen.</td>
+                </tr>
+                <tr>
+                    <td><code>--help, --?, -h, -?</code></td>
+                    <td>Zeigt die Parametersyntax an.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Erweiterte Befehlszeilenoption</strong></th>
+                    <th><strong>Beschreibung</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>--channelId &lt;ID></code></td>
+                    <td>Die ID des Kanals für die zu installierende Instanz. Diese ist für den Installationsbefehl erforderlich. Bei anderen Befehlen wird sie ignoriert, wenn „--installPath“ festgelegt wurde.</td>
+                </tr>
+                <tr>
+                    <td><code>--channelUri &lt;URI></code></td>
+                    <td>Der URI des Kanalmanifests. Dieser kann für den Installationsbefehl verwendet werden; für andere Befehle wird er ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--installChannelUri &lt;URI></code></td>
+                    <td>Der URI des Kanalmanifests für die Installation. Der mittels „--channelUri“ angegebene URI dient zum Erkennen von Updates. („--channelUri“ muss bei Verwendung von „--installChannelUri“ angegeben werden.) Sind keine Updates gewünscht, muss „--channelUri“ ohne Argument angegeben werden. Dieser kann für den Installationsbefehl verwendet werden; für andere Befehle wird er ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--installCatalogUri &lt;URI></code></td>
+                    <td>Der URI des Katalogmanifests für die Installation. Wenn dieser angegeben wurde, versucht der Kanal-Manager, das Katalogmanifest von diesem URI herunterzuladen, bevor der URI im Katalogmanifest für die Installation verwendet wird. Dieser Parameter wird für die Offline-Installation verwendet, bei der der Layout-Cache mit dem bereits heruntergeladenen Produktkatalog erstellt wird. Dieser kann für den Installationsbefehl verwendet werden; für andere Befehle wird er ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--in &lt;Pfad></code></td>
+                    <td>Der URI oder Pfad der Antwortdatei.</td>
+                </tr>
+                <tr>
+                    <td><code>--addProductLang &lt;Sprache-Gebietsschema></code></td>
+                    <td>Definiert die Sprache eines zu installierenden Artefakts (Gruppe, Workload oder Komponente). Kann mehrmals in der Befehlszeile verwendet werden. Dies ist für zum Installieren und Ändern optional, zum Aktualisieren, Reparieren und Deinstallieren wird es ignoriert. Ohne Angabe wird bei der Installation das Gebietsschema des Computers verwendet.</td>
+                </tr>
+                <tr>
+                    <td><code>--removeProductLang &lt;Sprache-Gebietsschema></code></td>
+                    <td>Definiert die Sprache eines zu entfernenden Artefakts (Gruppe, Workload oder Komponente). Kann mehrmals in der Befehlszeile verwendet werden. Dies ist für zum Installieren und Ändern optional, zum Aktualisieren, Reparieren und Deinstallieren wird es ignoriert.</td>
+                </tr>
+                <tr>
+                    <td><code>--wait</code></td>
+                    <td>Dieser Prozess wartet, bis die Installation abgeschlossen ist, bevor er einen Exitcode zurückgibt. Dies ist beim Automatisieren von Installationen hilfreich, wenn der Abschluss der Installation abgewartet werden muss, um den Rückgabecode dieser Installation zu behandeln.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Sprache-Gebietsschema</th>
+                    <th>Sprache</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cs-CZ</td>
+                    <td>Tschechisch</td>
+                </tr>
+                <tr>
+                    <td>de-DE</td>
+                    <td>Deutsch</td>
+                </tr>
+                <tr>
+                    <td>en-US</td>
+                    <td>Englisch</td>
+                </tr>
+                <tr>
+                    <td>es-ES</td>
+                    <td>Spanisch</td>
+                </tr>
+                <tr>
+                    <td>fr-FR</td>
+                    <td>Französisch</td>
+                </tr>
+                <tr>
+                    <td>it-IT</td>
+                    <td>Italienisch</td>
+                </tr>
+                <tr>
+                    <td>ja-JP</td>
+                    <td>Japanisch</td>
+                </tr>
+                <tr>
+                    <td>ko-KR</td>
+                    <td>Koreanisch</td>
+                </tr>
+                <tr>
+                    <td>pl-PL</td>
+                    <td>Polnisch</td>
+                </tr>
+                <tr>
+                    <td>pt-BR</td>
+                    <td>Portugiesisch (Brasilien)</td>
+                </tr>
+                <tr>
+                    <td>ru-RU</td>
+                    <td>Russisch</td>
+                </tr>
+                <tr>
+                    <td>tr-TR</td>
+                    <td>Türkisch</td>
+                </tr>
+                <tr>
+                    <td>zh-CN</td>
+                    <td>Chinesisch (vereinfacht)</td>
+                </tr>
+                <tr>
+                    <td>zh-TW</td>
+                    <td>Chinesisch (traditionell)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <br />Eine ausführliche Anleitung finden Sie unter <span class="style1"> <a href="https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x407">https://go.microsoft.com/fwlink/?LinkID=838246&amp;clcid=0x407</a>.</span></p>
+    <p>&#160;</p>
+</body>
+</html>
