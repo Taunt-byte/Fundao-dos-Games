@@ -1,4 +1,37 @@
-#feed{
+body{
+	text-align: justify;
+}
+
+#img1{
 	text-align: center;
-	color: orange;
+	background-color: black;
+	color: white;
+}
+
+#img2{
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+#img3{
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+#foto1{
+	padding: 15px;
+}
+
+#not1{
+	padding: 15px;
+	width: 500px;
+	height:400px;
+}
+
+#not2{
+	padding: 15px;
+	width: 500px;
+	height: 400px;
 }
