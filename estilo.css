@@ -21,12 +21,23 @@
 	padding: 15px;
 }
 
+#titulo0{
+	text-align: center;
+	color:red;
+}
+
+#titulo{
+	text-align: center;
+	color: red;
+}
+
 #not1{
 	padding: 20px;
 	width: 450px;
 	height:400px;
 	float:left;
 	text-align: center;
+	color: black;
 }
 
 #not2{
@@ -35,4 +46,9 @@
 	height: 400px;
 	float:left;
 	text-align: center;
+}
+
+#noti1{
+	padding: 20px;
+	text-align: justify;
 }
