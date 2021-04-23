@@ -23,7 +23,7 @@
 
 #titulo0{
 	text-align: center;
-	color:red;
+	color:black;
 }
 
 #titulo{
@@ -51,4 +51,14 @@
 #noti1{
 	padding: 20px;
 	text-align: justify;
+}
+
+#video1{
+	text-align: center;
+	padding: 20px;
+}
+
+video{
+	width: 80%;
+	height: auto;
 }
