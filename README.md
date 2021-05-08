@@ -1,15 +1,20 @@
-# Fundão dos games
-    🎮 Analise de games de diversos consoles e sistemas operacionais
-    🎮 Postagem de trailers 
-    🎮 Analises de sistemas para jogos
+<h1> Fundão dos Games </h1>
 
-# O que tera
-    • Sistema de Comentario 
-    • Sistema Login
-# Tecnologia usados no projeto
-    • HTML 5
-    • CSS3
-    • BootStrap
-    • JavaScript
-    • Responsividade
+> Status: Developing ⚠️
+
+## Content that will be found on the site
++ Analysis of games from different consoles and operating systems
++ Posting trailers
++ Analysis of gaming systems
+
+## Systems that will be implemented
++ Comment system
++ Login system
+    
+## Technology used in the project
++ HTML 5
++ CSS3
++ BootStrap
++ JavaScript
++ Responsiveness
     
