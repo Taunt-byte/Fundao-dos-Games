@@ -12,9 +12,14 @@
 + Login system
     
 ## Technology used in the project
-+ HTML 5
-+ CSS3
-+ BootStrap
-+ JavaScript
-+ Responsiveness
-    
+
+<table>
+    <td>HTML</td>
+    <td>CSS</td>
+    <td>BootStrap</td>
+    <td>JavaScript</td>
+</table>
+<table>
+    <td>5</td>
+    <td>3</td>
+</table>
