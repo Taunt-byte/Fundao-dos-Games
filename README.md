@@ -14,12 +14,15 @@
 ## Technology used in the project
 
 <table>
+    <tr>
     <td>HTML</td>
     <td>CSS</td>
     <td>BootStrap</td>
     <td>JavaScript</td>
-</table>
-<table>
-    <td>5</td>
-    <td>3</td>
+    </tr>
+    <tr>
+    <td>5.*</td>
+    <td>3.*</td>
+    <td>5.0.0</td>
+    </tr>
 </table>
