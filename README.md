@@ -1,6 +1,6 @@
 <h1> Fundão dos Games </h1>
 
-> Status: Developing ⚠️
+> Status: under development ⚠️
 
 ## Content that will be found on the site
 + Analysis of games from different consoles and operating systems
