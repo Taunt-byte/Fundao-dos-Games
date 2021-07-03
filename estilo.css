@@ -28,7 +28,8 @@
 
 #titulo{
 	text-align: center;
-	color: red;
+	color: black;
+
 }
 
 #not1{
@@ -65,5 +66,26 @@ video{
 
 #fale{
 	padding: 20px;
+	text-align: center;
+}
+#feed1{
+	padding: 20px;
+	width: 500px;
+	height: 500px;
+	float:left;
+	text-align: center;
+}
+#feed2{
+	padding: 20px;
+	width: 500px;
+	height: 500px;
+	float:right;
+	text-align: center;
+}
+#feed3{
+	padding: 20px;
+	width: 500px;
+	height: 500px;
+	float:center;
 	text-align: center;
 }
