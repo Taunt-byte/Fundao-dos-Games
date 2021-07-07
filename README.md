@@ -1,17 +1,17 @@
 <h1> Fundão dos Games </h1>
 
-> Status: under development ⚠️
+Status: em desenvolvimento ⚠️
 
-## Content that will be found on the site
-+ Analysis of games from different consoles and operating systems
-+ Posting trailers
-+ Analysis of gaming systems
-
-## Systems that will be implemented
-+ Comment system
-+ Login system
+## Conteúdo que será encontrado no site
++ Postagem de Fotos
++ Postagem de Videos
++ Postagem de comentarios
++ Postagem de noticias
+## Sistemas a ser implimentados
++ Sistema de comentarios nas noticias
++ Sistema de login
     
-## Technology used in the project
+## Tecnologias usadas no projeto
 
 <table>
     <tr>
@@ -23,6 +23,7 @@
     <tr>
     <td>5.*</td>
     <td>3.*</td>
-    <td>5.0.0</td>
+    <td>4.*</td>
+    <td>5.*</td>
     </tr>
 </table>

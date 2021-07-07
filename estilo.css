@@ -1,91 +1,36 @@
+/*Configuração de imagem*/
 
-#img1{
+img
+{
+    width: 450px;
+    height:450px;
+}
+/*Configuração do body*/
+body{
+	background-color: rgb(33, 37, 41);
+}
+/*Configuração do index*/
+#carrosel{
 	text-align: center;
-	background-color: black;
+	padding: 10px; 
+	background-color: rgb(33, 37, 41);
+}
+#subT{
+	text-align: center;
+	background-color: rgb(33, 37, 41);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: white;
+	font-size: medium;
 }
-
-#img2{
-	text-align: center;
-	background-color: black;
-	color: white;
-}
-
-#img3{
-	text-align: center;
-	background-color: black;
-	color: white;
-}
-
-#foto1{
-	padding: 15px;
-}
-
-#titulo0{
-	text-align: center;
-	color:black;
-}
-
 #titulo{
-	text-align: center;
-	color: black;
-
-}
-
-#not1{
-	padding: 20px;
-	width: 450px;
-	height:400px;
-	float:left;
-	text-align: center;
-	color: black;
-}
-
-#not2{
-	padding: 20px;
-	width: 450px;
-	height: 400px;
-	float:left;
+	background-color: rgb(33, 37, 41);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
 	text-align: center;
 }
-
-#noti1{
-	padding: 20px;
+#feed{
+	background-color: rgb(33, 37, 41);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
 	text-align: justify;
-}
-
-#video1{
-	text-align: center;
-	padding: 20px;
-}
-
-video{
-	width: 80%;
-	height: auto;
-}
-
-#fale{
-	padding: 20px;
-	text-align: center;
-}
-#feed1{
-	padding: 20px;
-	width: 500px;
-	height: 500px;
-	float:left;
-	text-align: center;
-}
-#feed2{
-	padding: 20px;
-	width: 500px;
-	height: 500px;
-	float:right;
-	text-align: center;
-}
-#feed3{
-	padding: 20px;
-	width: 500px;
-	height: 500px;
-	float:center;
-	text-align: center;
 }
